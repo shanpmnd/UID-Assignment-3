@@ -1,0 +1,29 @@
+/* Just making the boxes visible for now */
+
+header, footer {
+    background-color: lightpink;
+    padding: 20px;
+}
+
+section {
+    border: 2px dashed gray;
+    padding: 40px 20px;
+    margin: 10px;
+}
+
+/* Hero inner boxes */
+.hero {
+    display: flex;
+}
+
+.hero-text {
+    background-color: rgb(224, 255, 231);
+    padding: 20px;
+    flex: 1;
+}
+
+.hero-image {
+    background-color: lightblue;
+    padding: 20px;
+    flex: 1;
+}
