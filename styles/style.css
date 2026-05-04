@@ -1,0 +1,206 @@
+/* HEADER */
+header {
+    background-color: #CEACAC;
+    padding: 12px 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.header-right {
+    font-size: 12px;
+    color: #555;
+}
+
+.header-right img {
+    width: 16px;
+    height: 16px;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    height: 75vh;
+}
+
+.hero-text {
+    background-color: #FDF9FB;
+    width: 40%;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-image {
+    width: 60%;
+    overflow: hidden;
+    background-color: #FDF9FB;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+/* HERO BUTTONS */
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    margin-bottom: 32px;
+}
+
+.hero-buttons a {
+    padding: 12px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.hero-buttons a:first-child {
+    background-color: #2b1b10;
+    color: #FDF9FB;
+}
+
+.hero-buttons a:last-child {
+    background-color: transparent;
+    color: #1a1a1a;
+    border: 1px solid #2b1b10;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    gap: 24px;
+}
+
+.stat-number {
+    font-size: 18px;
+    font-weight: 700;
+    color: #C27B8E;
+}
+
+.stat p {
+    font-size: 11px;
+    color: #2b1b10;
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+/* OUR SPECIALITIES */
+.specialties {
+    background-color: #f2d6d6;
+    padding: 40px;
+}
+
+.specialties h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.specialties-grid {
+    display: flex;
+    gap: 16px;
+}
+
+.specialty-card {
+    flex: 1;
+    position: relative;
+}
+
+.specialty-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.specialty-card p {
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* OUR STORY */
+.story {
+    padding: 40px;
+}
+
+.story h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.story p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+/* KEEP IN TOUCH */
+.newsletter {
+    background-color: #f2d6d6;
+    padding: 40px;
+}
+
+.newsletter h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.newsletter form {
+    display: flex;
+    gap: 12px;
+}
+
+.newsletter input {
+    padding: 10px 16px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 240px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
