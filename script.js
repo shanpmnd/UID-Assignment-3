@@ -88,3 +88,14 @@ function removeItem(index) {
     localStorage.setItem('cart', JSON.stringify(existing))
     location.reload()
 }
+
+// UPDATE CART BADGE
+const cartBadge = document.getElementById('cart-badge')
+
+if (cartBadge) {
+    const cartData = localStorage.getItem('cart')
+    if (cartData) {
+        const items = JSON.parse(cartData)
+        cartBadge.textContent = items.length
+    }
+}
