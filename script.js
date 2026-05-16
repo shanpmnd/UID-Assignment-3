@@ -47,7 +47,7 @@ if (cartContainer) {
     if (cartData) {
         const items = JSON.parse(cartData) 
 
-        items.forEach(function(item) {
+        items.forEach(function(item, index) {
             cartContainer.innerHTML += `
             <div class="cart-item">
                     <img src="${item.image}" alt="${item.name}" class="cart-item-img">
@@ -60,7 +60,7 @@ if (cartContainer) {
                                 <span>1</span>
                                 <button class="cart-qty-btn">+</button>
                             </div>
-                            <a href="#" class="cart-remove">Remove</a>
+                            <a href="#" class="cart-remove" onclick="removeItem(${index})">Remove</a>
                         </div>
                     </div>
                     <p class="cart-item-price">$${item.price}.00</p>
@@ -78,4 +78,12 @@ if (cartContainer) {
         document.querySelector('.cart-summary-value').textContent = '$' + total + '.00'
         document.querySelector('.cart-total-value').textContent = '$' + total + '.00'
     }
+}
+
+// REMOVE ITEM
+function removeItem(index) {
+    const existing = JSON.parse(localStorage.getItem('cart'))
+    existing.splice(index, 1)
+    localStorage.setItem('cart', JSON.stringify(existing))
+    location.reload()
 }
