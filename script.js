@@ -2,16 +2,29 @@
 
 const addToCartBtn = document.querySelector(' .add-to-cart-btn')
 
+const item1 = {
+    name: 'Triple Chocolate Cake',
+    image: 'assets/choc_cake.png',
+    size: '6" Whole',
+    serves: '6-8 people',
+    price: 65
+}
+
+const item2 = {
+    name: 'Biscoff Burnt Basque Cheesecake',
+    image: 'assets/cheesecake.png',
+    size: '6" Whole',
+    serves: '6-8 people',
+    price: 65
+}
+
 if (addToCartBtn) {
     addToCartBtn.addEventListener('click', function() {
-        const item = {
-            name: 'Triple Chocolate Cake',
-            image: 'assets/choc_cake.png',
-            size: '6" Whole',
-            serves: '6-8 people',
-            price: 65
-        }
-        localStorage.setItem('cart', JSON.stringify([item]))
+    if (document.title === 'Triple Chocolate Cake — Her Little Patisserie') {
+    localStorage.setItem('cart', JSON.stringify([item1]))
+    } else if (document.title === 'Biscoff Burnt Basque Cheesecake — Her Little Patisserie') {
+    localStorage.setItem('cart', JSON.stringify([item2]))
+}
     })
 }
 
