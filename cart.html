@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart — Her Little Patisserie</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">logo image Her Little Patisserie</div>
+        <nav>
+            <a href="product_list.html">MENU</a>
+            <a href="#">CUSTOM CAKES</a>
+            <a href="#">WEDDINGS</a>
+            <a href="#">ABOUT</a>
+        </nav>
+        <div class="header-right">
+            Unit 1, 607 Elizabeth St · Open Today
+            <a href="#"><img src="assets/search.png" alt="search"></a>
+            <a href="#"><img src="assets/signup.png" alt="sign-up or login"></a>
+            <a href="#"><img src="assets/cart.png" alt="cart"></a>
+        </div>
+    </header>
+
+    <main class="cart-main">
+
+        <!-- CART HEADER -->
+        <div class="cart-header">
+            <div class="cart-header-left">
+                <a href="product_list.html" class="continue-shopping">← Continue Shopping</a>
+                <span class="cart-divider">|</span>
+                <h1 class="cart-title">YOUR CART</h1>
+            </div>
+            <span class="cart-item-count">(1 item)</span>
+        </div>
+
+        <!-- CART BODY -->
+        <div class="cart-body">
+
+            <!-- LEFT COLUMN -->
+            <div class="cart-left">
+
+                <!-- PICKUP DETAILS -->
+                <p class="cart-section-label">PICKUP DETAILS</p>
+                <div class="pickup-box">
+                    <div class="pickup-row">
+                        <div class="pickup-icon pickup-icon-location">📍</div>
+                        <div class="pickup-text">
+                            <p class="pickup-main">Unit 1, 607 Elizabeth St, Melbourne VIC</p>
+                            <p class="pickup-sub">Her Little Patisserie &amp; Big Bang Yogurt</p>
+                        </div>
+                    </div>
+                    <div class="pickup-row">
+                        <div class="pickup-icon pickup-icon-time">🕐</div>
+                        <div class="pickup-text">
+                            <p class="pickup-main">Saturday, 25/04/2026 at 13:00</p>
+                            <p class="pickup-sub">Estimated Pickup Time</p>
+                        </div>
+                        <a href="#" class="pickup-edit">EDIT</a>
+                    </div>
+                </div>
+
+                <!-- ORDER ITEMS -->
+                <p class="cart-section-label">ORDER ITEMS</p>
+                <hr class="cart-divider-line">
+
+                <div id="cart-items-container"></div>
+
+                <!-- ADD MORE ITEMS -->
+                <div class="cart-add-more">
+                    <div class="cart-add-icon">+</div>
+                    <span>Add more items to your order</span>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="cart-right">
+                <div class="cart-summary">
+                    <div class="cart-summary-row">
+                        <span class="cart-summary-label">Subtotal (1 items)</span>
+                        <span class="cart-summary-value">$65.00</span>
+                    </div>
+                    <hr class="cart-divider-line">
+                    <div class="cart-summary-row">
+                        <span class="cart-total-label">Order total</span>
+                        <span class="cart-total-value">$65.00</span>
+                    </div>
+                    <button class="cart-checkout-btn">CHECKOUT</button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
