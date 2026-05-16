@@ -1,6 +1,11 @@
+// CLEAR CART ON HOME PAGE
+if (document.title === 'Her Little Patisserie') {
+    localStorage.removeItem('cart')
+}
+
 // ADD TO CART
 
-const addToCartBtn = document.querySelector(' .add-to-cart-btn')
+const addToCartBtn = document.querySelector('.add-to-cart-btn')
 
 const item1 = {
     name: 'Triple Chocolate Cake',
@@ -20,13 +25,15 @@ const item2 = {
 
 if (addToCartBtn) {
     addToCartBtn.addEventListener('click', function() {
+        const existing = JSON.parse(localStorage.getItem('cart') || '[]')
+
         if (document.title === 'Triple Chocolate Cake — Her Little Patisserie') {
-        localStorage.setItem('cart', JSON.stringify([item1]))
-        } 
-        
-        else if (document.title === 'Biscoff Burnt Basque Cheesecake — Her Little Patisserie') {
-        localStorage.setItem('cart', JSON.stringify([item2]))
-}
+            existing.push(item1)
+        } else if (document.title === 'Biscoff Burnt Basque Cheesecake — Her Little Patisserie') {
+            existing.push(item2)
+        }
+
+        localStorage.setItem('cart', JSON.stringify(existing))
     })
 }
 
@@ -60,11 +67,15 @@ if (cartContainer) {
                 </div>
                 <hr class="cart-divider-line"></hr>
             `
-
         })
 
-        
+        // UPDATE TOTAL
+        let total = 0
+        items.forEach(function(item) {
+            total += item.price
+        })
 
-       
+        document.querySelector('.cart-summary-value').textContent = '$' + total + '.00'
+        document.querySelector('.cart-total-value').textContent = '$' + total + '.00'
     }
 }
