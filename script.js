@@ -20,10 +20,12 @@ const item2 = {
 
 if (addToCartBtn) {
     addToCartBtn.addEventListener('click', function() {
-    if (document.title === 'Triple Chocolate Cake — Her Little Patisserie') {
-    localStorage.setItem('cart', JSON.stringify([item1]))
-    } else if (document.title === 'Biscoff Burnt Basque Cheesecake — Her Little Patisserie') {
-    localStorage.setItem('cart', JSON.stringify([item2]))
+        if (document.title === 'Triple Chocolate Cake — Her Little Patisserie') {
+        localStorage.setItem('cart', JSON.stringify([item1]))
+        } 
+        
+        else if (document.title === 'Biscoff Burnt Basque Cheesecake — Her Little Patisserie') {
+        localStorage.setItem('cart', JSON.stringify([item2]))
 }
     })
 }
