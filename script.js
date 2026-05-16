@@ -77,6 +77,7 @@ if (cartContainer) {
 
         document.querySelector('.cart-summary-value').textContent = '$' + total + '.00'
         document.querySelector('.cart-total-value').textContent = '$' + total + '.00'
+        document.getElementById('order-items-label').textContent = 'ORDER ITEMS (' + items.length + ')'
     }
 }
 
