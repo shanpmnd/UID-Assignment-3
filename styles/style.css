@@ -1,3 +1,16 @@
+/* FONTS */
+* {
+    font-family: 'Outfit', sans-serif;
+}
+
+h1, h2, .menu-title, .cart-title {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.menu-title, .cart-title, h1 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
 /* HEADER */
 header {
     background-color: #CEACAC;
@@ -46,6 +59,12 @@ nav a {
 .header-right img {
     width: 16px;
     height: 16px;
+}
+
+.highlight {
+    color: #C27B8E;
+    font-weight: 400;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 /* HERO */
