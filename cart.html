@@ -10,7 +10,7 @@
 <body>
 
     <header>
-        <div class="logo">logo image Her Little Patisserie</div>
+        <div class="logo"><img src="assets/Logo.png" alt="Her Little Patisserie"> Her Little Patisserie</div>
         <nav>
             <a href="product_list.html">MENU</a>
             <a href="#">CUSTOM CAKES</a>
@@ -107,7 +107,7 @@
                         <span class="cart-total-label">Order total</span>
                         <span class="cart-total-value">$0.00</span>
                     </div>
-                    <button class="cart-checkout-btn">CHECKOUT</button>
+                    <button class="cart-checkout-btn" id="checkout-btn">CHECKOUT</button>
                 </div>
 
                 <!-- RECOMMENDED -->
@@ -138,6 +138,58 @@
         </div>
 
     </main>
+
+    <!-- PAYMENT OVERLAY -->
+    <div class="payment-overlay" id="payment-overlay">
+        <div class="payment-panel">
+
+            <!-- TITLE -->
+            <h2 class="payment-title">PAYMENT DETAILS</h2>
+            <hr class="payment-divider">
+
+            <!-- FORM -->
+            <div class="payment-field">
+                <label class="payment-label">NAME ON CARD</label>
+                <input type="text" class="payment-input">
+            </div>
+
+            <div class="payment-field">
+                <label class="payment-label">CARD NUMBER</label>
+                <input type="text" class="payment-input" maxlength="19">
+            </div>
+
+            <div class="payment-row">
+                <div class="payment-field">
+                    <label class="payment-label">CVV</label>
+                    <input type="text" class="payment-input" maxlength="3">
+                </div>
+                <div class="payment-field">
+                    <label class="payment-label">EXPIRY DATE</label>
+                    <input type="text" class="payment-input" placeholder="MM / YY" maxlength="7">
+                </div>
+            </div>
+
+            <div class="payment-field">
+                <label class="payment-label">BILLING ADDRESS</label>
+                <input type="text" class="payment-input">
+            </div>
+
+            <div class="payment-row">
+                <div class="payment-field">
+                    <label class="payment-label">STATE</label>
+                    <input type="text" class="payment-input">
+                </div>
+                <div class="payment-field">
+                    <label class="payment-label">POSTCODE</label>
+                    <input type="text" class="payment-input" maxlength="4">
+                </div>
+            </div>
+
+            <!-- MAKE PAYMENT BUTTON -->
+            <button class="payment-btn" id="make-payment-btn">MAKE PAYMENT – $0</button>
+
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

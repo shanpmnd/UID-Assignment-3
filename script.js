@@ -1,10 +1,14 @@
-// CLEAR CART ON HOME PAGE
+// CLEAR CART ON HOME PAGE - for clean refresh
 if (document.title === 'Her Little Patisserie') {
     localStorage.removeItem('cart')
 }
 
-// ADD TO CART
+// CLEAR CART ON CONFIRMATION PAGE
+if (document.title === 'Order Confirmed — Her Little Patisserie') {
+    localStorage.removeItem('cart')
+}
 
+// ADD TO CART
 const addToCartBtn = document.querySelector('.add-to-cart-btn')
 
 const item1 = {
@@ -38,7 +42,6 @@ if (addToCartBtn) {
 }
 
 // CART PAGE - reading from localStorage
-
 const cartContainer = document.getElementById('cart-items-container')
 
 if (cartContainer) {
@@ -79,6 +82,44 @@ if (cartContainer) {
         document.querySelector('.cart-total-value').textContent = '$' + total + '.00'
         document.getElementById('order-items-label').textContent = 'ORDER ITEMS (' + items.length + ')'
     }
+}
+
+// PAYMENT OVERLAY
+const checkoutBtn = document.getElementById('checkout-btn')
+const paymentOverlay = document.getElementById('payment-overlay')
+const makePaymentBtn = document.getElementById('make-payment-btn')
+
+if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', function() {
+        // Set the dynamic total on the button
+        const cartData = localStorage.getItem('cart')
+        if (cartData && makePaymentBtn) {
+            const items = JSON.parse(cartData)
+            let total = 0
+            items.forEach(function(item) {
+                total += item.price
+            })
+            makePaymentBtn.textContent = 'MAKE PAYMENT – $' + total
+        }
+        paymentOverlay.classList.add('active')
+        document.body.style.overflow = 'hidden'
+    })
+}
+
+// Close if clicking outside the panel 
+if (paymentOverlay) {
+    paymentOverlay.addEventListener('click', function(event) {
+        if (event.target === paymentOverlay) {
+            paymentOverlay.classList.remove('active') // changes css back to hidden
+            document.body.style.overflow = ''
+        }
+    })
+}
+
+if (makePaymentBtn) {
+    makePaymentBtn.addEventListener('click', function() {
+        window.location.href = 'confirmation.html'
+    })
 }
 
 // REMOVE ITEM
