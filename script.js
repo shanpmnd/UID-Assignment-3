@@ -48,7 +48,7 @@ if (cartContainer) {
     const cartData = localStorage.getItem('cart')
 
     if (cartData) {
-        const items = JSON.parse(cartData) 
+        const items = JSON.parse(cartData)
 
         items.forEach(function(item, index) {
             cartContainer.innerHTML += `
@@ -106,11 +106,11 @@ if (checkoutBtn) {
     })
 }
 
-// Close if clicking outside the panel 
+// Close if clicking outside the panel
 if (paymentOverlay) {
     paymentOverlay.addEventListener('click', function(event) {
         if (event.target === paymentOverlay) {
-            paymentOverlay.classList.remove('active') // changes css back to hidden
+            paymentOverlay.classList.remove('active')
             document.body.style.overflow = ''
         }
     })
