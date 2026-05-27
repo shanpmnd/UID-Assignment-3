@@ -10,7 +10,7 @@
 <body>
 
     <header>
-        <div class="logo"><img src="assets/Logo.png" alt="Her Little Patisserie"> Her Little Patisserie</div>
+        <a href="index.html" class="logo"><img src="assets/Logo.png" alt="Her Little Patisserie"> Her Little Patisserie</a>
         <nav>
             <a href="product_list.html">MENU</a>
             <a href="#">CUSTOM CAKES</a>
@@ -140,7 +140,7 @@
     </main>
 
     <!-- PAYMENT OVERLAY -->
-    <div class="payment-overlay" id="payment-overlay">
+    <form class="payment-overlay" id="payment-overlay">
         <div class="payment-panel">
 
             <!-- TITLE -->
@@ -150,7 +150,7 @@
             <!-- FORM -->
             <div class="payment-field">
                 <label class="payment-label">NAME ON CARD</label>
-                <input type="text" class="payment-input">
+                <input type="text" class="payment-input" placeholder="">
             </div>
 
             <div class="payment-field">
@@ -186,10 +186,10 @@
             </div>
 
             <!-- MAKE PAYMENT BUTTON -->
-            <button class="payment-btn" id="make-payment-btn">MAKE PAYMENT – $0</button>
+            <button type="button" class="payment-btn" id="make-payment-btn">MAKE PAYMENT – $0</button>
 
         </div>
-    </div>
+    </form>
 
     <script src="script.js"></script>
 </body>

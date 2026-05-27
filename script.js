@@ -52,7 +52,7 @@ if (cartContainer) {
 
         items.forEach(function(item, index) {
             cartContainer.innerHTML += `
-            <div class="cart-item">
+                <div class="cart-item">
                     <img src="${item.image}" alt="${item.name}" class="cart-item-img">
                     <div class="cart-item-info">
                         <p class="cart-item-name">${item.name}</p>
