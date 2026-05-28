@@ -14,18 +14,47 @@ const addToCartBtn = document.querySelector('.add-to-cart-btn')
 const item1 = {
     name: 'Triple Chocolate Cake',
     image: 'assets/choc_cake.png',
+    description: 'Crafted with premium Belgium chocolate so that everyone can enjoy! Also made with chocolate drizzle and topped with fresh fruits.',
     size: '6" Whole',
     serves: '6-8 people',
-    price: 65
+    price: 65,
+    sizes: [
+        { name: 'Slice', serves: '1–2 people', price: 10 },
+        { name: '6" Whole', serves: '6–8 people', price: 65 },
+        { name: '8" Whole', serves: '10–12 people', price: 100 }
+    ]
 }
 
 const item2 = {
     name: 'Biscoff Burnt Basque Cheesecake',
     image: 'assets/cheesecake.png',
+    description: 'Crafted with premium ingredients, including velvet cream cheese, smooth Biscoff spread, and a luxurious selection of fresh fruits.',
     size: '6" Whole',
     serves: '6-8 people',
-    price: 65
+    price: 65,
+    sizes: [
+        { name: 'Slice', serves: '1–2 people', price: 10 },
+        { name: '6" Whole', serves: '6–8 people', price: 65 },
+        { name: '8" Whole', serves: '10–12 people', price: 100 }
+    ]
 }
+
+const productCardLinks = document.querySelectorAll('.product-card-link[data-id]')
+
+productCardLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+        const id = parseInt(this.getAttribute('data-id'))
+
+        if (id === 1) {
+            localStorage.setItem('selectedProduct', JSON.stringify(item1))
+        }
+
+        else if (id === 2) {
+            localStorage.setItem('selectedProduct', JSON.stringify(item2))
+        }
+    })
+})
+
 
 if (addToCartBtn) {
     addToCartBtn.addEventListener('click', function() {
@@ -38,8 +67,10 @@ if (addToCartBtn) {
         }
 
         localStorage.setItem('cart', JSON.stringify(existing))
+        window.location.href = 'cart.html'
     })
 }
+
 
 // CART PAGE - reading from localStorage
 const cartContainer = document.getElementById('cart-items-container')
@@ -139,4 +170,29 @@ if (cartBadge) {
         const items = JSON.parse(cartData)
         cartBadge.textContent = items.length
     }
+}
+
+// PRODUCT DETAIL PAGE
+const selectedProduct = localStorage.getItem('selectedProduct')
+const productMainImg = document.getElementById('product-main-img')
+
+if (selectedProduct && productMainImg) {
+    const product = JSON.parse(selectedProduct)
+
+    document.getElementById('breadcrumb-name').textContent = product.name.toUpperCase()
+    document.getElementById('product-name').textContent = product.name.toUpperCase()
+    document.getElementById('product-description').textContent = product.description
+
+    productMainImg.src = product.image
+    productMainImg.alt = product.name
+
+    document.querySelectorAll('.product-thumb').forEach(function(thumb) {
+        thumb.src = product.image
+        thumb.alt = product.name
+    })
+
+    const pricesDetail = document.getElementById('product-prices-detail')
+    pricesDetail.innerHTML = product.sizes.map(function(s) {
+        return '<span>' + s.name.charAt(0) + ' $' + s.price + '.00</span>'
+    }).join('')
 }
