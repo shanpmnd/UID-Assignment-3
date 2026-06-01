@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Menu — Her Little Patisserie</title>
+    <title>Search Results — Her Little Patisserie</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/product_list.css">
+    <link rel="stylesheet" href="styles/results.css">
 </head>
 <body>
 
@@ -45,14 +46,24 @@
         </div>
     </header>
 
+    <!-- SEARCH BAR -->
+    <div class="search-bar">
+        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.5001 11.5L19.9321 19.6864" stroke="black" stroke-width="2"/>
+        <circle cx="7" cy="7" r="6" stroke="black" stroke-width="2"/>
+        </svg>
+        <input type="search" class="search-input" placeholder="Find Products" autofocus>
+        <a href="product_list.html" class="search-close">✕</a>
+    </div>
+
     <main>
 
         <nav aria-label="Breadcrumb" class="breadcrumb">
-            <a href="index.html">HOME</a> / THE MENU
+            <a href="index.html">HOME</a>
         </nav>
 
-        <section class="menu-header">
-            <h1 class="menu-title">THE <span class="menu-title-pink">MENU</span></h1>
+        <section class="results-header">
+            <h1 class="results-title">RESULTS</h1>
             <div class="menu-filters">
                 <div class="filter-item">
                     <span class="filter-label">Pickup Date</span>
@@ -70,20 +81,13 @@
                         <button type="button">EDIT</button>
                     </div>
                 </div>
-                <div class="filter-sort">
-                    <span class="product-count">10 products</span>
-                    <button type="button" class="sort-btn">SORT: PRICES</button>
-                </div>
             </div>
         </section>
 
-        <nav aria-label="Product categories" class="menu-tabs">
-            <button type="button" class="tab current">MOST POPULAR</button>
-            <button type="button" class="tab">OUR SIGNATURE BAKES</button>
-            <button type="button" class="tab">YOGURT</button>
-            <button type="button" class="tab">SMOOTHIES</button>
-            <button type="button" class="tab">ICE CREAM</button>
-        </nav>
+        <div class="results-count-row">
+            <a href="product_list.html">Shop all</a>
+            <span>40 items</span>
+        </div>
 
         <div class="menu-filter-row">
             <img src="assets/filter.png" alt="">
