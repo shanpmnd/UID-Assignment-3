@@ -6,12 +6,13 @@
     <title>The Menu — Her Little Patisserie</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/product_list.css">
 </head>
 <body>
 
     <header>
         <a href="index.html" class="logo"><img src="assets/Logo.png" alt="Her Little Patisserie"> Her Little Patisserie</a>
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="product_list.html">MENU</a>
             <a href="#">CUSTOM CAKES</a>
             <a href="#">WEDDINGS</a>
@@ -19,19 +20,19 @@
         </nav>
         <div class="header-right">
             Unit 1, 607 Elizabeth St · Open Today
-            <a href="#">
+            <a href="#" aria-label="Search">
                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11.5001 11.5L19.9321 19.6864" stroke="black" stroke-width="2"/>
                 <circle cx="7" cy="7" r="6" stroke="black" stroke-width="2"/>
                 </svg>
             </a>
-            <a href="#">
+            <a href="#" aria-label="Account">
                 <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="9.5" cy="4.5" r="3.5" stroke="black" stroke-width="2"/>
                 <path d="M1 21V20.25C1 15.6937 4.69365 12 9.25 12C13.8063 12 17.5 15.6937 17.5 20.25V21" stroke="black" stroke-width="2"/>
                 </svg>
             </a>
-            <a href="cart.html" class="cart-icon-wrapper">
+            <a href="cart.html" class="cart-icon-wrapper" aria-label="View cart">
                 <svg width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M25.3326 3L22.9196 13.0996H8.11389L5.70081 3H25.3326Z" stroke="black" stroke-width="2"/>
                 <line y1="1" x2="11.0834" y2="1" stroke="black" stroke-width="2"/>
@@ -45,180 +46,147 @@
     </header>
 
     <main>
-        <!-- BREADCRUMB -->
-        <div class="breadcrumb">
+
+        <nav aria-label="Breadcrumb" class="breadcrumb">
             <a href="index.html">HOME</a> / THE MENU
-        </div>
+        </nav>
 
-
-        <!-- MENU HEADER -->
-        <div class="menu-header">
+        <section class="menu-header">
             <h1 class="menu-title">THE <span class="menu-title-pink">MENU</span></h1>
             <div class="menu-filters">
                 <div class="filter-item">
                     <span class="filter-label">Pickup Date</span>
                     <div class="filter-input">
-                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g filter="url(#filter0_d_471_5)">
-                        <path d="M4 3C4 1.34315 5.34315 0 7 0H48.2879C49.9447 0 51.2879 1.34315 51.2879 3V44.2879C51.2879 45.9447 49.9447 47.2879 48.2879 47.2879H7C5.34315 47.2879 4 45.9447 4 44.2879V3Z" fill="#F2C3CB"/>
-                        </g>
-                        <rect x="15.1997" y="12.4443" width="23.6439" height="22.3995" rx="3" fill="#FDF9FB"/>
-                        <path d="M18.528 29.4664L22.624 25.1464C23.04 24.7198 23.3653 24.3518 23.6 24.0424C23.8347 23.7224 24 23.4291 24.096 23.1624C24.2027 22.8958 24.256 22.6184 24.256 22.3304C24.256 21.7651 24.0747 21.3224 23.712 21.0024C23.3493 20.6824 22.88 20.5224 22.304 20.5224C21.7387 20.5224 21.2427 20.6611 20.816 20.9384C20.3893 21.2051 20.0107 21.6211 19.68 22.1864L18.624 21.3064C19.0613 20.5811 19.5893 20.0371 20.208 19.6744C20.8267 19.3011 21.5413 19.1144 22.352 19.1144C23.0347 19.1144 23.6267 19.2478 24.128 19.5144C24.64 19.7811 25.0347 20.1544 25.312 20.6344C25.5893 21.1144 25.728 21.6744 25.728 22.3144C25.728 22.7731 25.6693 23.1838 25.552 23.5464C25.4453 23.9091 25.248 24.2824 24.96 24.6664C24.6827 25.0398 24.2933 25.4878 23.792 26.0104L20.48 29.4184L18.528 29.4664ZM18.528 30.3784V29.4664L19.808 29.0344H25.984V30.3784H18.528ZM30.6243 30.5384C29.8669 30.5384 29.1896 30.4051 28.5923 30.1384C28.0056 29.8611 27.5096 29.4611 27.1043 28.9384L28.1283 27.9144C28.3736 28.2878 28.7096 28.5864 29.1363 28.8104C29.5736 29.0238 30.0589 29.1304 30.5923 29.1304C31.0936 29.1304 31.5309 29.0344 31.9043 28.8424C32.2883 28.6504 32.5869 28.3838 32.8003 28.0424C33.0243 27.6904 33.1363 27.2744 33.1363 26.7944C33.1363 26.3038 33.0296 25.8878 32.8163 25.5464C32.6029 25.2051 32.3149 24.9491 31.9523 24.7784C31.6003 24.5971 31.2109 24.5064 30.7843 24.5064C30.3469 24.5064 29.9469 24.5598 29.5843 24.6664C29.2323 24.7731 28.8963 24.9544 28.5763 25.2104L28.5923 24.2504C28.7736 24.0264 28.9816 23.8451 29.2163 23.7064C29.4509 23.5678 29.7176 23.4611 30.0163 23.3864C30.3149 23.3118 30.6616 23.2744 31.0563 23.2744C31.8243 23.2744 32.4749 23.4344 33.0083 23.7544C33.5416 24.0744 33.9469 24.5064 34.2243 25.0504C34.5123 25.5944 34.6562 26.2024 34.6562 26.8744C34.6562 27.5784 34.4803 28.2078 34.1283 28.7624C33.7869 29.3171 33.3123 29.7544 32.7043 30.0744C32.0963 30.3838 31.4029 30.5384 30.6243 30.5384ZM28.5763 25.2104L27.7603 24.3944L28.2563 19.2744H29.6323L29.0723 24.5384L28.5763 25.2104ZM28.5603 20.6184L28.2563 19.2744H34.0963V20.6184H28.5603Z" fill="black"/>
-                        <circle cx="20.7996" cy="11.8222" r="1.61663" stroke="black" stroke-width="0.5"/>
-                        <circle cx="33.2438" cy="11.8222" r="1.61663" stroke="black" stroke-width="0.5"/>
-                        <circle cx="27.0218" cy="11.8222" r="1.61663" stroke="black" stroke-width="0.5"/>
-                        <defs>
-                        <filter id="filter0_d_471_5" x="0" y="0" width="55.2878" height="55.2881" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                        <feOffset dy="4"/>
-                        <feGaussianBlur stdDeviation="2"/>
-                        <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_471_5"/>
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_471_5" result="shape"/>
-                        </filter>
-                        </defs>
-                        </svg>
+                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#filter0_d_471_5)"><path d="M4 3C4 1.34315 5.34315 0 7 0H48.2879C49.9447 0 51.2879 1.34315 51.2879 3V44.2879C51.2879 45.9447 49.9447 47.2879 48.2879 47.2879H7C5.34315 47.2879 4 45.9447 4 44.2879V3Z" fill="#F2C3CB"/></g><rect x="15.1997" y="12.4443" width="23.6439" height="22.3995" rx="3" fill="#FDF9FB"/><path d="M18.528 29.4664L22.624 25.1464C23.04 24.7198 23.3653 24.3518 23.6 24.0424C23.8347 23.7224 24 23.4291 24.096 23.1624C24.2027 22.8958 24.256 22.6184 24.256 22.3304C24.256 21.7651 24.0747 21.3224 23.712 21.0024C23.3493 20.6824 22.88 20.5224 22.304 20.5224C21.7387 20.5224 21.2427 20.6611 20.816 20.9384C20.3893 21.2051 20.0107 21.6211 19.68 22.1864L18.624 21.3064C19.0613 20.5811 19.5893 20.0371 20.208 19.6744C20.8267 19.3011 21.5413 19.1144 22.352 19.1144C23.0347 19.1144 23.6267 19.2478 24.128 19.5144C24.64 19.7811 25.0347 20.1544 25.312 20.6344C25.5893 21.1144 25.728 21.6744 25.728 22.3144C25.728 22.7731 25.6693 23.1838 25.552 23.5464C25.4453 23.9091 25.248 24.2824 24.96 24.6664C24.6827 25.0398 24.2933 25.4878 23.792 26.0104L20.48 29.4184L18.528 29.4664ZM18.528 30.3784V29.4664L19.808 29.0344H25.984V30.3784H18.528ZM30.6243 30.5384C29.8669 30.5384 29.1896 30.4051 28.5923 30.1384C28.0056 29.8611 27.5096 29.4611 27.1043 28.9384L28.1283 27.9144C28.3736 28.2878 28.7096 28.5864 29.1363 28.8104C29.5736 29.0238 30.0589 29.1304 30.5923 29.1304C31.0936 29.1304 31.5309 29.0344 31.9043 28.8424C32.2883 28.6504 32.5869 28.3838 32.8003 28.0424C33.0243 27.6904 33.1363 27.2744 33.1363 26.7944C33.1363 26.3038 33.0296 25.8878 32.8163 25.5464C32.6029 25.2051 32.3149 24.9491 31.9523 24.7784C31.6003 24.5971 31.2109 24.5064 30.7843 24.5064C30.3469 24.5064 29.9469 24.5598 29.5843 24.6664C29.2323 24.7731 28.8963 24.9544 28.5763 25.2104L28.5923 24.2504C28.7736 24.0264 28.9816 23.8451 29.2163 23.7064C29.4509 23.5678 29.7176 23.4611 30.0163 23.3864C30.3149 23.3118 30.6616 23.2744 31.0563 23.2744C31.8243 23.2744 32.4749 23.4344 33.0083 23.7544C33.5416 24.0744 33.9469 24.5064 34.2243 25.0504C34.5123 25.5944 34.6562 26.2024 34.6562 26.8744C34.6562 27.5784 34.4803 28.2078 34.1283 28.7624C33.7869 29.3171 33.3123 29.7544 32.7043 30.0744C32.0963 30.3838 31.4029 30.5384 30.6243 30.5384ZM28.5763 25.2104L27.7603 24.3944L28.2563 19.2744H29.6323L29.0723 24.5384L28.5763 25.2104ZM28.5603 20.6184L28.2563 19.2744H34.0963V20.6184H28.5603Z" fill="black"/><circle cx="20.7996" cy="11.8222" r="1.61663" stroke="black" stroke-width="0.5"/><circle cx="33.2438" cy="11.8222" r="1.61663" stroke="black" stroke-width="0.5"/><circle cx="27.0218" cy="11.8222" r="1.61663" stroke="black" stroke-width="0.5"/><defs><filter id="filter0_d_471_5" x="0" y="0" width="55.2878" height="55.2881" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset dy="4"/><feGaussianBlur stdDeviation="2"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_471_5"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_471_5" result="shape"/></filter></defs></svg>
                         <span>Saturday, 25/04/2026</span>
-                        <button>EDIT</button>
+                        <button type="button">EDIT</button>
                     </div>
                 </div>
                 <div class="filter-item">
                     <span class="filter-label">Pickup Time</span>
                     <div class="filter-input">
-                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g filter="url(#filter0_d_471_4)">
-                        <path d="M4 3C4 1.34315 5.34315 0 7 0H48.2879C49.9447 0 51.2879 1.34315 51.2879 3V44.2879C51.2879 45.9447 49.9447 47.2879 48.2879 47.2879H7C5.34315 47.2879 4 45.9447 4 44.2879V3Z" fill="#F2C3CB"/>
-                        </g>
-                        <circle cx="28.4857" cy="24.3617" r="12.4442" fill="#FDF9FB"/>
-                        <path d="M29.4858 16.895C29.4858 16.3427 29.0381 15.895 28.4858 15.895C27.9336 15.895 27.4858 16.3427 27.4858 16.895L28.4858 16.895L29.4858 16.895ZM27.4858 25.6059L27.4858 26.6059L29.4858 26.6059L29.4858 25.6059L28.4858 25.6059L27.4858 25.6059ZM28.4858 16.895L27.4858 16.895L27.4858 25.6059L28.4858 25.6059L29.4858 25.6059L29.4858 16.895L28.4858 16.895Z" fill="black"/>
-                        <path d="M32.3919 31.6555C32.7824 32.046 33.4156 32.046 33.8061 31.6555C34.1966 31.265 34.1966 30.6318 33.8061 30.2413L33.099 30.9484L32.3919 31.6555ZM28.1213 25.9707L27.4142 26.6778L32.3919 31.6555L33.099 30.9484L33.8061 30.2413L28.8284 25.2636L28.1213 25.9707Z" fill="black"/>
-                        <defs>
-                        <filter id="filter0_d_471_4" x="0" y="0" width="55.2878" height="55.2881" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                        <feOffset dy="4"/>
-                        <feGaussianBlur stdDeviation="2"/>
-                        <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_471_4"/>
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_471_4" result="shape"/>
-                        </filter>
-                        </defs>
-                        </svg>
+                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#filter0_d_471_4)"><path d="M4 3C4 1.34315 5.34315 0 7 0H48.2879C49.9447 0 51.2879 1.34315 51.2879 3V44.2879C51.2879 45.9447 49.9447 47.2879 48.2879 47.2879H7C5.34315 47.2879 4 45.9447 4 44.2879V3Z" fill="#F2C3CB"/></g><circle cx="28.4857" cy="24.3617" r="12.4442" fill="#FDF9FB"/><path d="M29.4858 16.895C29.4858 16.3427 29.0381 15.895 28.4858 15.895C27.9336 15.895 27.4858 16.3427 27.4858 16.895L28.4858 16.895L29.4858 16.895ZM27.4858 25.6059L27.4858 26.6059L29.4858 26.6059L29.4858 25.6059L28.4858 25.6059L27.4858 25.6059ZM28.4858 16.895L27.4858 16.895L27.4858 25.6059L28.4858 25.6059L29.4858 25.6059L29.4858 16.895L28.4858 16.895Z" fill="black"/><path d="M32.3919 31.6555C32.7824 32.046 33.4156 32.046 33.8061 31.6555C34.1966 31.265 34.1966 30.6318 33.8061 30.2413L33.099 30.9484L32.3919 31.6555ZM28.1213 25.9707L27.4142 26.6778L32.3919 31.6555L33.099 30.9484L33.8061 30.2413L28.8284 25.2636L28.1213 25.9707Z" fill="black"/><defs><filter id="filter0_d_471_4" x="0" y="0" width="55.2878" height="55.2881" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset dy="4"/><feGaussianBlur stdDeviation="2"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_471_4"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_471_4" result="shape"/></filter></defs></svg>
                         <span>13:00</span>
-                        <button>EDIT</button>
+                        <button type="button">EDIT</button>
                     </div>
                 </div>
                 <div class="filter-sort">
                     <span class="product-count">10 products</span>
-                    <button class="sort-btn">SORT: PRICES</button>
+                    <button type="button" class="sort-btn">SORT: PRICES</button>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- CATEGORY TABS -->
-        <div class="menu-tabs">
-            <button class="tab current">MOST POPULAR</button>
-            <button class="tab">OUR SIGNATURE BAKES</button>
-            <button class="tab">YOGURT</button>
-            <button class="tab">SMOOTHIES</button>
-            <button class="tab">ICE CREAM</button>
-        </div>
+        <nav aria-label="Product categories" class="menu-tabs">
+            <button type="button" class="tab current">MOST POPULAR</button>
+            <button type="button" class="tab">OUR SIGNATURE BAKES</button>
+            <button type="button" class="tab">YOGURT</button>
+            <button type="button" class="tab">SMOOTHIES</button>
+            <button type="button" class="tab">ICE CREAM</button>
+        </nav>
 
-        <!-- FILTER ROW -->
         <div class="menu-filter-row">
-            <img src="assets/filter.png" alt="Filter Icon">
-            <button class="filter-all-btn active">ALL</button>
+            <img src="assets/filter.png" alt="">
+            <button type="button" class="filter-all-btn active">ALL</button>
         </div>
 
-        <!-- PRODUCTS GRID -->
-        <div class="products-grid">
+        <ul class="products-grid">
 
-            <a href="product_detail.html" class="product-card-link" data-id="1">
-            <div class="product-card">
-                <img src="assets/choc_cake.png" alt="Triple Chocolate Cake">
-                <div class="product-card-info">
-                    <h3>TRIPLE CHOCOLATE CAKE</h3>
-                    <p>Crafted with premium Belgium chocolate so that everyone can enjoy! Also made with...</p>
-                    <div class="product-prices">
-                        <span>S $10.00</span>
-                        <span>M $65.00</span>
-                        <span>L $100.00</span>
+            <li>
+                <a href="product_detail.html" class="product-card-link" data-id="1">
+                    <article class="product-card">
+                        <img src="assets/choc_cake.png" alt="Triple Chocolate Cake">
+                        <div class="product-card-info">
+                            <h3>TRIPLE CHOCOLATE CAKE</h3>
+                            <p>Crafted with premium Belgium chocolate so that everyone can enjoy! Also made with...</p>
+                            <div class="product-prices">
+                                <span>S $10.00</span>
+                                <span>M $65.00</span>
+                                <span>L $100.00</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            </li>
+
+            <li>
+                <a href="product_detail.html" class="product-card-link" data-id="2">
+                    <article class="product-card">
+                        <img src="assets/cheesecake.png" alt="Biscoff Burnt Basque Cheesecake">
+                        <div class="product-card-info">
+                            <h3>BISCOFF BURNT BASQUE CHEESECAKE</h3>
+                            <p>Our Vanilla Burnt Basque Cheesecake is irresistibly creamy, topped with fresh homemade white...</p>
+                            <div class="product-prices">
+                                <span>S $10.00</span>
+                                <span>M $65.00</span>
+                                <span>L $100.00</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            </li>
+
+            <li>
+                <article class="product-card">
+                    <img src="assets/choc_cake.png" alt="Triple Chocolate Cake">
+                    <div class="product-card-info">
+                        <h3>TRIPLE CHOCOLATE CAKE</h3>
+                        <p>Crafted with premium Belgium chocolate so that everyone can enjoy! Also made with...</p>
+                        <div class="product-prices">
+                            <span>S $10.00</span>
+                            <span>M $65.00</span>
+                            <span>L $100.00</span>
+                        </div>
                     </div>
-                </div>
-            </div>
-            </a>
+                </article>
+            </li>
 
-            <a href="product_detail.html" class="product-card-link" data-id="2">
-            <div class="product-card">
-                <img src="assets/cheesecake.png" alt="Biscoff Burnt Basque Cheesecake">
-                <div class="product-card-info">
-                    <h3>BISCOFF BURNT BASQUE CHEESECAKE</h3>
-                    <p>Our Vanilla Burnt Basque Cheesecake is irresistibly creamy, topped with fresh homemade white...</p>
-                    <div class="product-prices">
-                        <span>S $10.00</span>
-                        <span>M $65.00</span>
-                        <span>L $100.00</span>
+            <li>
+                <article class="product-card">
+                    <img src="assets/cheesecake.png" alt="Biscoff Burnt Basque Cheesecake">
+                    <div class="product-card-info">
+                        <h3>BISCOFF BURNT BASQUE CHEESECAKE</h3>
+                        <p>Our Vanilla Burnt Basque Cheesecake is irresistibly creamy, topped with fresh homemade white...</p>
+                        <div class="product-prices">
+                            <span>S $10.00</span>
+                            <span>M $65.00</span>
+                            <span>L $100.00</span>
+                        </div>
                     </div>
-                </div>
-            </div>
-            </a>
+                </article>
+            </li>
 
-            <div class="product-card">
-                <img src="assets/choc_cake.png" alt="Triple Chocolate Cake">
-                <div class="product-card-info">
-                    <h3>TRIPLE CHOCOLATE CAKE</h3>
-                    <p>Crafted with premium ingredients, including velvet cream cheese, smooth Biscoff spread, luxurious...</p>
-                    <div class="product-prices">
-                        <span>S $10.00</span>
-                        <span>M $65.00</span>
-                        <span>L $100.00</span>
+            <li>
+                <article class="product-card">
+                    <img src="assets/choc_cake.png" alt="Triple Chocolate Cake">
+                    <div class="product-card-info">
+                        <h3>TRIPLE CHOCOLATE CAKE</h3>
+                        <p>Crafted with premium Belgium chocolate so that everyone can enjoy! Also made with...</p>
+                        <div class="product-prices">
+                            <span>S $10.00</span>
+                            <span>M $65.00</span>
+                            <span>L $100.00</span>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </article>
+            </li>
 
-            <div class="product-card">
-                <img src="assets/cheesecake.png" alt="Biscoff Burnt Basque Cheesecake">
-                <div class="product-card-info">
-                    <h3>BISCOFF BURNT BASQUE CHEESECAKE</h3>
-                    <p>Our Vanilla Burnt Basque Cheesecake is irresistibly creamy, topped with fresh homemade white...</p>
-                    <div class="product-prices">
-                        <span>S $10.00</span>
-                        <span>M $65.00</span>
-                        <span>L $100.00</span>
+            <li>
+                <article class="product-card">
+                    <img src="assets/cheesecake.png" alt="Biscoff Burnt Basque Cheesecake">
+                    <div class="product-card-info">
+                        <h3>BISCOFF BURNT BASQUE CHEESECAKE</h3>
+                        <p>Our Vanilla Burnt Basque Cheesecake is irresistibly creamy, topped with fresh homemade white...</p>
+                        <div class="product-prices">
+                            <span>S $10.00</span>
+                            <span>M $65.00</span>
+                            <span>L $100.00</span>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </article>
+            </li>
 
-            <div class="product-card">
-                <img src="assets/choc_cake.png" alt="Triple Chocolate Cake">
-                <div class="product-card-info">
-                    <h3>TRIPLE CHOCOLATE CAKE</h3>
-                    <p>Crafted with premium ingredients, including velvet cream cheese, smooth Biscoff spread, luxurious...</p>
-                    <div class="product-prices">
-                        <span>S $10.00</span>
-                        <span>M $65.00</span>
-                        <span>L $100.00</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="assets/cheesecake.png" alt="Biscoff Burnt Basque Cheesecake">
-                <div class="product-card-info">
-                    <h3>BISCOFF BURNT BASQUE CHEESECAKE</h3>
-                    <p>Our Vanilla Burnt Basque Cheesecake is irresistibly creamy, topped with fresh homemade white...</p>
-                    <div class="product-prices">
-                        <span>S $10.00</span>
-                        <span>M $65.00</span>
-                        <span>L $100.00</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        </ul>
 
     </main>
 

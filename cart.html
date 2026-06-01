@@ -6,12 +6,13 @@
     <title>Your Cart — Her Little Patisserie</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/cart.css">
 </head>
 <body>
 
     <header>
         <a href="index.html" class="logo"><img src="assets/Logo.png" alt="Her Little Patisserie"> Her Little Patisserie</a>
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="product_list.html">MENU</a>
             <a href="#">CUSTOM CAKES</a>
             <a href="#">WEDDINGS</a>
@@ -19,19 +20,19 @@
         </nav>
         <div class="header-right">
             Unit 1, 607 Elizabeth St · Open Today
-            <a href="#">
+            <a href="#" aria-label="Search">
                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11.5001 11.5L19.9321 19.6864" stroke="black" stroke-width="2"/>
                 <circle cx="7" cy="7" r="6" stroke="black" stroke-width="2"/>
                 </svg>
             </a>
-            <a href="#">
+            <a href="#" aria-label="Account">
                 <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="9.5" cy="4.5" r="3.5" stroke="black" stroke-width="2"/>
                 <path d="M1 21V20.25C1 15.6937 4.69365 12 9.25 12C13.8063 12 17.5 15.6937 17.5 20.25V21" stroke="black" stroke-width="2"/>
                 </svg>
             </a>
-            <a href="cart.html" class="cart-icon-wrapper">
+            <a href="cart.html" class="cart-icon-wrapper" aria-label="View cart">
                 <svg width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M25.3326 3L22.9196 13.0996H8.11389L5.70081 3H25.3326Z" stroke="black" stroke-width="2"/>
                 <line y1="1" x2="11.0834" y2="1" stroke="black" stroke-width="2"/>
@@ -46,33 +47,29 @@
 
     <main class="cart-main">
 
-        <!-- CART HEADER -->
         <div class="cart-header">
             <div class="cart-header-left">
                 <a href="product_list.html" class="continue-shopping">← Continue Shopping</a>
                 <span class="cart-divider">|</span>
-                <h1 class="cart-title">YOUR CART</h1>
+                <h1 class="cart-title">YOUR <span class="highlight-garamond">CART</span></h1>
             </div>
         </div>
 
-        <!-- CART BODY -->
         <div class="cart-body">
 
-            <!-- LEFT COLUMN -->
-            <div class="cart-left">
+            <section class="cart-left">
 
-                <!-- PICKUP DETAILS -->
                 <p class="cart-section-label">PICKUP DETAILS</p>
                 <div class="pickup-box">
                     <div class="pickup-row">
-                        <div class="pickup-icon pickup-icon-location">📍</div>
-                        <div class="pickup-text">
+                        <div class="pickup-icon">📍</div>
+                        <address class="pickup-text">
                             <p class="pickup-main">Unit 1, 607 Elizabeth St, Melbourne VIC</p>
                             <p class="pickup-sub">Her Little Patisserie &amp; Big Bang Yogurt</p>
-                        </div>
+                        </address>
                     </div>
                     <div class="pickup-row">
-                        <div class="pickup-icon pickup-icon-time">🕐</div>
+                        <div class="pickup-icon">🕐</div>
                         <div class="pickup-text">
                             <p class="pickup-main">Saturday, 25/04/2026 at 13:00</p>
                             <p class="pickup-sub">Estimated Pickup Time</p>
@@ -81,23 +78,20 @@
                     </div>
                 </div>
 
-                <!-- ORDER ITEMS -->
                 <p class="cart-section-label" id="order-items-label">ORDER ITEMS</p>
                 <hr class="cart-divider-line">
 
-                <div id="cart-items-container"></div>
+                <ul id="cart-items-container"></ul>
 
-                <!-- ADD MORE ITEMS -->
                 <a href="product_list.html" class="cart-add-more">
-                    <div class="cart-add-icon">+</div>
+                    <div class="cart-add-icon" aria-hidden="true">+</div>
                     <span>Add more items to your order</span>
                 </a>
 
-            </div>
+            </section>
 
-            <!-- RIGHT COLUMN -->
-            <div class="cart-right">
-                <div class="cart-summary">
+            <aside class="cart-right">
+                <section class="cart-summary">
                     <div class="cart-summary-row">
                         <span class="cart-summary-label">Subtotal</span>
                         <span class="cart-summary-value">$0.00</span>
@@ -107,14 +101,12 @@
                         <span class="cart-total-label">Order total</span>
                         <span class="cart-total-value">$0.00</span>
                     </div>
-                    <button class="cart-checkout-btn" id="checkout-btn">CHECKOUT</button>
-                </div>
+                    <button type="button" class="cart-checkout-btn" id="checkout-btn">CHECKOUT</button>
+                </section>
 
-                <!-- RECOMMENDED -->
-                <div class="cart-recommended">
+                <section class="cart-recommended">
                     <p class="cart-section-label">RECOMMENDED</p>
                     <hr class="cart-divider-line">
-
                     <div class="recommended-card">
                         <img src="assets/choc_cherry.png" alt="Chocolate Cherry Cake">
                         <div class="recommended-info">
@@ -124,7 +116,6 @@
                             <p class="recommended-price">L $100.00</p>
                         </div>
                     </div>
-
                     <div class="recommended-card">
                         <img src="assets/sweet_harmony.png" alt="Sweet Harmony Cake Set">
                         <div class="recommended-info">
@@ -132,60 +123,57 @@
                             <p class="recommended-price">$40</p>
                         </div>
                     </div>
-                </div>
+                </section>
+            </aside>
 
-            </div>
         </div>
 
     </main>
 
     <!-- PAYMENT OVERLAY -->
-    <form class="payment-overlay" id="payment-overlay">
+    <form class="payment-overlay" id="payment-overlay" aria-label="Payment details">
         <div class="payment-panel">
 
-            <!-- TITLE -->
             <h2 class="payment-title">PAYMENT DETAILS</h2>
             <hr class="payment-divider">
 
-            <!-- FORM -->
             <div class="payment-field">
-                <label class="payment-label">NAME ON CARD</label>
-                <input type="text" class="payment-input" placeholder="John Doe">
+                <label class="payment-label" for="card-name">NAME ON CARD</label>
+                <input type="text" id="card-name" class="payment-input" placeholder="John Doe" autocomplete="cc-name">
             </div>
 
             <div class="payment-field">
-                <label class="payment-label">CARD NUMBER</label>
-                <input type="text" class="payment-input" placeholder="0000 0000 0000 0000" maxlength="19">
+                <label class="payment-label" for="card-number">CARD NUMBER</label>
+                <input type="text" id="card-number" class="payment-input" placeholder="0000 0000 0000 0000" maxlength="19" autocomplete="cc-number">
             </div>
 
             <div class="payment-row">
                 <div class="payment-field">
-                    <label class="payment-label">CVV</label>
-                    <input type="text" class="payment-input" placeholder="123" maxlength="3">
+                    <label class="payment-label" for="card-cvv">CVV</label>
+                    <input type="text" id="card-cvv" class="payment-input" placeholder="123" maxlength="3" autocomplete="cc-csc">
                 </div>
                 <div class="payment-field">
-                    <label class="payment-label">EXPIRY DATE</label>
-                    <input type="text" class="payment-input" placeholder="MM / YY" maxlength="7">
+                    <label class="payment-label" for="card-expiry">EXPIRY DATE</label>
+                    <input type="text" id="card-expiry" class="payment-input" placeholder="MM / YY" maxlength="7" autocomplete="cc-exp">
                 </div>
             </div>
 
             <div class="payment-field">
-                <label class="payment-label">BILLING ADDRESS</label>
-                <input type="text" class="payment-input" placeholder="Street address">
+                <label class="payment-label" for="billing-address">BILLING ADDRESS</label>
+                <input type="text" id="billing-address" class="payment-input" placeholder="Street address" autocomplete="street-address">
             </div>
 
             <div class="payment-row">
                 <div class="payment-field">
-                    <label class="payment-label">STATE</label>
-                    <input type="text" class="payment-input" placeholder="VIC">
+                    <label class="payment-label" for="billing-state">STATE</label>
+                    <input type="text" id="billing-state" class="payment-input" placeholder="VIC" autocomplete="address-level1">
                 </div>
                 <div class="payment-field">
-                    <label class="payment-label">POSTCODE</label>
-                    <input type="text" class="payment-input" placeholder="3000" maxlength="4">
+                    <label class="payment-label" for="billing-postcode">POSTCODE</label>
+                    <input type="text" id="billing-postcode" class="payment-input" placeholder="3000" maxlength="4" autocomplete="postal-code">
                 </div>
             </div>
 
-            <!-- MAKE PAYMENT BUTTON -->
             <button type="button" class="payment-btn" id="make-payment-btn">MAKE PAYMENT – $0</button>
 
         </div>

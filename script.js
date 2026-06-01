@@ -11,6 +11,7 @@ if (document.title === 'Order Confirmed — Her Little Patisserie') {
 // ADD TO CART
 const addToCartBtn = document.querySelector('.add-to-cart-btn')
 
+
 const item1 = {
     name: 'Triple Chocolate Cake',
     image: 'assets/choc_cake.png',
@@ -19,9 +20,9 @@ const item1 = {
     serves: '6-8 people',
     price: 65,
     sizes: [
-        { name: 'Slice', serves: '1–2 people', price: 10 },
-        { name: '6" Whole', serves: '6–8 people', price: 65 },
-        { name: '8" Whole', serves: '10–12 people', price: 100 }
+        { label: 'S', name: 'Slice', serves: '1–2 people', price: 10 },
+        { label: 'M', name: '6" Whole', serves: '6–8 people', price: 65 },
+        { label: 'L', name: '8" Whole', serves: '10–12 people', price: 100 }
     ]
 }
 
@@ -33,9 +34,9 @@ const item2 = {
     serves: '6-8 people',
     price: 65,
     sizes: [
-        { name: 'Slice', serves: '1–2 people', price: 10 },
-        { name: '6" Whole', serves: '6–8 people', price: 65 },
-        { name: '8" Whole', serves: '10–12 people', price: 100 }
+        { label: 'S', name: 'Slice', serves: '1–2 people', price: 10 },
+        { label: 'M', name: '6" Whole', serves: '6–8 people', price: 65 },
+        { label: 'L', name: '8" Whole', serves: '10–12 people', price: 100 }
     ]
 }
 
@@ -59,11 +60,17 @@ productCardLinks.forEach(function(link) {
 if (addToCartBtn) {
     addToCartBtn.addEventListener('click', function() {
         const existing = JSON.parse(localStorage.getItem('cart') || '[]')
+        const selectedProductRaw = localStorage.getItem('selectedProduct')
 
-        if (document.title === 'Triple Chocolate Cake — Her Little Patisserie') {
-            existing.push(item1)
-        } else if (document.title === 'Biscoff Burnt Basque Cheesecake — Her Little Patisserie') {
-            existing.push(item2)
+        if (selectedProductRaw) {
+            const product = JSON.parse(selectedProductRaw)
+            existing.push({
+                name: product.name,
+                image: product.image,
+                size: product.size,
+                serves: product.serves,
+                price: product.price
+            })
         }
 
         localStorage.setItem('cart', JSON.stringify(existing))
@@ -83,23 +90,23 @@ if (cartContainer) {
 
         items.forEach(function(item, index) {
             cartContainer.innerHTML += `
-                <div class="cart-item">
+                <li class="cart-item">
                     <img src="${item.image}" alt="${item.name}" class="cart-item-img">
                     <div class="cart-item-info">
                         <p class="cart-item-name">${item.name}</p>
                         <p class="cart-item-size">${item.size} | ${item.serves}</p>
                         <div class="cart-item-controls">
                             <div class="cart-qty">
-                                <button class="cart-qty-btn">-</button>
-                                <span>1</span>
-                                <button class="cart-qty-btn">+</button>
+                                <button type="button" class="cart-qty-btn" aria-label="Decrease quantity">-</button>
+                                <span aria-live="polite">1</span>
+                                <button type="button" class="cart-qty-btn" aria-label="Increase quantity">+</button>
                             </div>
-                            <a href="#" class="cart-remove" onclick="removeItem(${index})">Remove</a>
+                            <button type="button" class="cart-remove" onclick="removeItem(${index})">Remove</button>
                         </div>
                     </div>
                     <p class="cart-item-price">$${item.price}.00</p>
-                </div>
-                <hr class="cart-divider-line"></hr>
+                </li>
+                <hr class="cart-divider-line">
             `
         })
 
@@ -193,6 +200,6 @@ if (selectedProduct && productMainImg) {
 
     const pricesDetail = document.getElementById('product-prices-detail')
     pricesDetail.innerHTML = product.sizes.map(function(s) {
-        return '<span>' + s.name.charAt(0) + ' $' + s.price + '.00</span>'
+        return '<span>' + s.label + ' $' + s.price + '.00</span>'
     }).join('')
 }
