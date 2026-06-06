@@ -11,6 +11,7 @@
 <body>
 
     <header>
+        <button type="button" class="menu-toggle" aria-label="Open menu">☰</button>
         <a href="index.html" class="logo"><img src="assets/Logo.png" alt="Her Little Patisserie"> Her Little Patisserie</a>
         <nav aria-label="Main navigation">
             <a href="product_list.html">MENU</a>
@@ -50,6 +51,7 @@
         <section class="hero">
 
             <div class="hero-text">
+                <img src="assets/Logo.png" alt="Her Little Patisserie" class="hero-mobile-logo">
                 <p class="hero-label">Her <span class="highlight">Little</span> Patisserie</p>
                 <h1>Enjoy Homemade Desserts Made For <span class="highlight-garamond">Everyone.</span></h1>
                 <p class="hero-sub">Handcrafted custom cakes with no artificial ingredients, no preservatives.</p>
@@ -59,26 +61,34 @@
                     <a href="#">CUSTOM CAKES</a>
                 </div>
 
-                <div class="stats">
-                    <div class="stat">
-                        <p class="stat-number">500+</p>
-                        <p class="stat-text">Happy customers in Melbourne</p>
-                    </div>
-                    <div class="stat">
-                        <p class="stat-number">100%</p>
-                        <p class="stat-text">Natural, preservative free ingredients</p>
-                    </div>
-                    <div class="stat">
-                        <p class="stat-number">4.7 ⭐</p>
-                        <p class="stat-text">Average rating across all orders</p>
-                    </div>
-                </div>
+
             </div>
 
             <div class="hero-image">
-                <img src="assets/cakeswirl.png" alt="Signature cake">
+                <picture>
+                    <source media="(max-width: 390px)" srcset="assets/mobile_cake.png">
+                    <img src="assets/cakeswirl.png" alt="Signature cake">
+                </picture>
             </div>
 
+        </section>
+
+        <section class="stats-section">
+            <p class="stats-label">What Others Say</p>
+            <div class="stats">
+                <div class="stat">
+                    <p class="stat-number">500+</p>
+                    <p class="stat-text">Happy customers in Melbourne</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-number">100%</p>
+                    <p class="stat-text">Natural, preservative free ingredients</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-number">4.7 ⭐</p>
+                    <p class="stat-text">Average rating across all orders</p>
+                </div>
+            </div>
         </section>
 
         <section class="specialties">
