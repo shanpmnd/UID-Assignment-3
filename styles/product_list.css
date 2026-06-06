@@ -190,3 +190,86 @@
     font-weight: 600;
     color: #C27B8E;
 }
+@media (max-width: 24.375rem) {
+
+    /* MENU HEADER */
+    .menu-header {
+        padding: 0.75rem 1.25rem 1rem;
+    }
+
+    .menu-title {
+        font-size: 2.25rem;
+    }
+
+    /* FILTERS — stack vertically, full width */
+    .menu-filters {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+    }
+
+    .filter-item {
+        width: 100%;
+    }
+
+    .filter-input {
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+    .filter-input span {
+        flex: 1;
+        text-align: left;
+    }
+
+    /* Hide sort and product count */
+    .filter-sort {
+        display: none;
+    }
+
+    /* CATEGORY TABS — horizontally scrollable */
+    .menu-tabs {
+        padding: 0 1.25rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        white-space: nowrap;
+        display: block;
+    }
+
+    .menu-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tab {
+        display: inline-block;
+        padding: 0.75rem 1rem;
+        font-size: 0.8125rem;
+    }
+
+    /* FILTER ROW */
+    .menu-filter-row {
+        padding: 0.75rem 1.25rem;
+    }
+
+    /* PRODUCTS — 2 column grid */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+    }
+
+    .product-card-info h3 {
+        font-size: 0.8125rem;
+    }
+
+    .product-card-info p {
+        font-size: 0.75rem;
+    }
+
+    .product-prices {
+        font-size: 0.8125rem;
+        gap: 0.5rem;
+    }
+}
