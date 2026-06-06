@@ -177,6 +177,22 @@ if (makePaymentBtn) {
     })
 }
 
+// MOBILE CHECKOUT BUTTON
+const checkoutBtnMobile = document.getElementById('checkout-btn-mobile')
+if (checkoutBtnMobile) {
+    checkoutBtnMobile.addEventListener('click', function() {
+        const cartData = localStorage.getItem('cart')
+        if (cartData && makePaymentBtn) {
+            const items = JSON.parse(cartData)
+            let total = 0
+            items.forEach(function(item) { total += item.price })
+            makePaymentBtn.textContent = 'MAKE PAYMENT – $' + total
+        }
+        paymentOverlay.classList.add('active')
+        document.body.style.overflow = 'hidden'
+    })
+}
+
 // REMOVE ITEM
 function removeItem(index) {
     const existing = JSON.parse(localStorage.getItem('cart'))
@@ -219,4 +235,11 @@ if (selectedProduct && productMainImg) {
     pricesDetail.innerHTML = product.sizes.map(function(s) {
         return '<span>' + s.label + ' $' + s.price + '.00</span>'
     }).join('')
+
+    const priceRange = document.getElementById('product-price-range')
+    if (priceRange) {
+        const min = product.sizes[0].price
+        const max = product.sizes[product.sizes.length - 1].price
+        priceRange.textContent = '$' + min + '.00 – $' + max + '.00'
+    }
 }

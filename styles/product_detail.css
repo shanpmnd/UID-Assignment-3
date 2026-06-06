@@ -261,3 +261,119 @@
     line-height: 1.6;
     margin: 0;
 }
+
+/* BACK BUTTON — hidden on desktop */
+.back-btn {
+    display: none;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* MOBILE PRICE RANGE — hidden on desktop */
+.product-price-range {
+    display: none;
+}
+
+@media (max-width: 24.375rem) {
+
+    /* HEADER — show back arrow, hide hamburger/logo/nav */
+    .back-btn {
+        display: block;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    body > header .logo {
+        display: none;
+    }
+
+    body > header nav {
+        display: none;
+    }
+
+    /* Hide breadcrumb */
+    .breadcrumb {
+        display: none;
+    }
+
+    /* LAYOUT — stack vertically */
+    .product-detail {
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+    }
+
+    /* GALLERY — full width */
+    .product-gallery {
+        width: 100%;
+    }
+
+    .product-main-image img {
+        aspect-ratio: 4 / 3;
+        width: 100%;
+    }
+
+    .product-thumbnails {
+        padding: 0 1.25rem;
+    }
+
+    /* INFO — full width with padding */
+    .product-info {
+        width: 100%;
+        padding: 1.25rem 1.25rem 6rem;
+        box-sizing: border-box;
+        gap: 0.875rem;
+    }
+
+    /* Hide desktop tags and prices */
+    .product-tags {
+        display: none;
+    }
+
+    .product-prices-detail {
+        display: none;
+    }
+
+    /* Show mobile price range */
+    .product-price-range {
+        display: block;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #C27B8E;
+        margin: 0;
+    }
+
+    /* Title smaller */
+    .product-name {
+        font-size: 1.5rem;
+        order: -1;
+    }
+
+    /* ADD-ONS — stack vertically */
+    .addons-options {
+        flex-direction: column;
+    }
+
+    /* STICKY ADD TO CART */
+    .add-to-cart-btn {
+        position: fixed;
+        bottom: 1.25rem;
+        left: 1.25rem;
+        right: 1.25rem;
+        width: auto;
+        height: auto;
+        padding: 0.875rem;
+        z-index: 100;
+        border-radius: 0;
+        font-size: 0.9375rem;
+    }
+
+    /* Hide photo counter on mobile */
+    .photo-counter {
+        display: none;
+    }
+}

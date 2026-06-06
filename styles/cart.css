@@ -502,3 +502,205 @@
 .confirmation-btn:hover {
     background-color: #BB6B33;
 }
+
+/* MOBILE ACTIONS — hidden on desktop */
+.cart-mobile-actions {
+    display: none;
+}
+
+@media (max-width: 24.375rem) {
+
+    /* HEADER — back arrow, no logo/hamburger (cart page only) */
+    .back-btn {
+        display: block;
+        text-decoration: none;
+        color: #333;
+        font-size: 1.25rem;
+    }
+
+    body.page-cart .menu-toggle {
+        display: none;
+    }
+
+    body.page-cart > header .logo {
+        display: none;
+    }
+
+    /* CART MAIN */
+    .cart-main {
+        padding: 1.25rem;
+        box-sizing: border-box;
+    }
+
+    /* CART HEADER */
+    .cart-header {
+        margin-bottom: 0.5rem;
+    }
+
+    .continue-shopping,
+    .cart-divider {
+        display: none;
+    }
+
+    .cart-title {
+        font-size: 2rem;
+    }
+
+    /* CART BODY — single column */
+    .cart-body {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* CART LEFT */
+    .cart-left {
+        padding: 0;
+        border: none;
+        background: transparent;
+    }
+
+    /* CART ITEMS — grid layout */
+    .cart-item {
+        display: grid;
+        grid-template-columns: 6rem 1fr;
+        grid-template-rows: auto auto;
+        gap: 0 0.75rem;
+        padding: 1rem 0;
+        align-items: start;
+    }
+
+    .cart-item-img {
+        width: 6rem;
+        height: 6rem;
+        grid-row: 1 / 3;
+    }
+
+    .cart-item-info {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .cart-item-controls {
+        grid-column: 2;
+        grid-row: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0.5rem;
+    }
+
+    .cart-item-price {
+        grid-column: 2;
+        grid-row: 2;
+        align-self: end;
+        text-align: right;
+        margin: 0;
+    }
+
+    /* Restructure controls row — qty left, price right */
+    .cart-item-controls {
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    .cart-remove {
+        font-size: 0.8125rem;
+    }
+
+    /* PICKUP BOX */
+    .pickup-box {
+        margin-bottom: 1rem;
+    }
+
+    /* CART RIGHT — full width, no fixed width */
+    .cart-right {
+        width: 100%;
+    }
+
+    /* Hide desktop checkout button and summary — use mobile actions instead */
+    .cart-summary {
+        display: none;
+    }
+
+    /* RECOMMENDED — show at bottom */
+    .cart-recommended {
+        border: none;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    /* MOBILE ACTIONS — two individual sticky buttons, no background */
+    .cart-mobile-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0.75rem 1.25rem 1.25rem;
+        z-index: 100;
+    }
+
+    .cart-main {
+        padding-bottom: 8rem;
+    }
+
+    .cart-back-browsing {
+        display: block;
+        text-align: center;
+        padding: 0.875rem;
+        background-color: white;
+        border: 0.0625rem solid #2b1b10;
+        text-decoration: none;
+        color: #1a1a1a;
+        font-size: 0.9375rem;
+        font-weight: 600;
+    }
+
+    .cart-checkout-mobile {
+        padding: 0.875rem;
+        background-color: #2b1b10;
+        color: white;
+        border: none;
+        font-size: 0.9375rem;
+        font-weight: 700;
+        font-family: 'Outfit', sans-serif;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 24.375rem) {
+
+    .payment-panel {
+        width: 90%;
+        max-width: 90%;
+        max-height: 85vh;
+        padding: 1.5rem 1.25rem;
+        overflow-y: auto;
+    }
+
+    .payment-overlay {
+        align-items: center;
+    }
+
+    .payment-title {
+        font-size: 1.75rem;
+    }
+
+    .payment-row {
+        gap: 0.75rem;
+    }
+
+    .payment-btn {
+        padding: 0.875rem;
+        font-size: 0.9375rem;
+    }
+}
+
+@media (max-width: 24.375rem) {
+    .confirmation-logo {
+        width: 7rem;
+        height: 7rem;
+    }
+}
