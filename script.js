@@ -1,3 +1,20 @@
+// HAMBURGER MENU TOGGLE
+const menuToggle = document.querySelector('.menu-toggle')
+const mobileNav = document.getElementById('mobile-nav')
+const mobileNavClose = document.getElementById('mobile-nav-close')
+
+if (menuToggle && mobileNav) {
+    menuToggle.addEventListener('click', function() {
+        mobileNav.classList.add('open')
+    })
+}
+
+if (mobileNavClose && mobileNav) {
+    mobileNavClose.addEventListener('click', function() {
+        mobileNav.classList.remove('open')
+    })
+}
+
 // CLEAR CART ON HOME PAGE - for clean refresh
 if (document.title === 'Her Little Patisserie') {
     localStorage.removeItem('cart')
