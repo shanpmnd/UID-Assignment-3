@@ -2,6 +2,11 @@
    CART PAGE
    ======================== */
 
+/* Hide header back-btn on desktop — Continue Shopping link exists in main content */
+.back-btn {
+    display: none;
+}
+
 /* RESET LIST STYLES */
 #cart-items-container {
     list-style: none;
