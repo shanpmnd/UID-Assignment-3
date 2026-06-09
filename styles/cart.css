@@ -450,73 +450,14 @@
     background-color: #BB6B33;
 }
 
-/* ========================
-   CONFIRMATION PAGE
-   ======================== */
-
-.confirmation-main {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fdf9fb;
-}
-
-.confirmation-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    text-align: center;
-}
-
-.confirmation-logo {
-    background-color: #CEACAC;
-    border-radius: 50%;
-    width: 8rem;
-    height: 8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.confirmation-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.confirmation-message {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    margin: 0;
-}
-
-.confirmation-btn {
-    padding: 1rem 2.5rem;
-    background-color: #2b1b10;
-    color: white;
-    text-decoration: none;
-    font-size: 0.9375rem;
-    font-weight: 700;
-    letter-spacing: 0.0625rem;
-}
-
-.confirmation-btn:hover {
-    background-color: #BB6B33;
-}
-
-/* MOBILE ACTIONS — hidden on desktop */
+/* MOBILE ACTIONS - hidden on desktop */
 .cart-mobile-actions {
     display: none;
 }
 
 @media (max-width: 24.375rem) {
 
-    /* HEADER — back arrow, no logo/hamburger (cart page only) */
+    /* HEADER - back arrow, no logo/hamburger (cart page only) */
     .back-btn {
         display: block;
         text-decoration: none;
@@ -552,7 +493,7 @@
         font-size: 2rem;
     }
 
-    /* CART BODY — single column */
+    /* CART BODY - single column */
     .cart-body {
         flex-direction: column;
         gap: 1.5rem;
@@ -565,7 +506,7 @@
         background: transparent;
     }
 
-    /* CART ITEMS — grid layout */
+    /* CART ITEMS - grid layout */
     .cart-item {
         display: grid;
         grid-template-columns: 6rem 1fr;
@@ -603,7 +544,7 @@
         margin: 0;
     }
 
-    /* Restructure controls row — qty left, price right */
+    /* Restructure controls row - qty left, price right */
     .cart-item-controls {
         justify-content: flex-start;
         gap: 1rem;
@@ -623,19 +564,19 @@
         width: 100%;
     }
 
-    /* Hide desktop checkout button and summary — use mobile actions instead */
+    /* Hide desktop checkout button and summary - use mobile actions instead */
     .cart-summary {
         display: none;
     }
 
-    /* RECOMMENDED — show at bottom */
+    /* RECOMMENDED - show at bottom */
     .cart-recommended {
         border: none;
         padding: 0;
         background-color: transparent;
     }
 
-    /* MOBILE ACTIONS — two individual sticky buttons, no background */
+    /* MOBILE ACTIONS - two individual sticky buttons, no background */
     .cart-mobile-actions {
         display: flex;
         flex-direction: column;
@@ -704,9 +645,3 @@
     }
 }
 
-@media (max-width: 24.375rem) {
-    .confirmation-logo {
-        width: 7rem;
-        height: 7rem;
-    }
-}
