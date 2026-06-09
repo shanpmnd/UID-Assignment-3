@@ -68,8 +68,9 @@ if (paymentOverlay) {
     })
 }
 
-if (makePaymentBtn) {
-    makePaymentBtn.addEventListener('click', function() {
+if (paymentOverlay) {
+    paymentOverlay.addEventListener('submit', function(event) {
+        event.preventDefault()
         window.location.href = 'confirmation.html'
     })
 }

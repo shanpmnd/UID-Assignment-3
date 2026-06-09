@@ -145,42 +145,42 @@
 
             <div class="payment-field">
                 <label class="payment-label" for="card-name">NAME ON CARD</label>
-                <input type="text" id="card-name" class="payment-input" placeholder="John Doe" autocomplete="cc-name">
+                <input type="text" id="card-name" class="payment-input" placeholder="John Doe" autocomplete="cc-name" required>
             </div>
 
             <div class="payment-field">
                 <label class="payment-label" for="card-number">CARD NUMBER</label>
-                <input type="text" id="card-number" class="payment-input" placeholder="0000 0000 0000 0000" maxlength="19" autocomplete="cc-number">
+                <input type="text" id="card-number" class="payment-input" placeholder="0000 0000 0000 0000" maxlength="19" autocomplete="cc-number" required>
             </div>
 
             <div class="payment-row">
                 <div class="payment-field">
                     <label class="payment-label" for="card-cvv">CVV</label>
-                    <input type="text" id="card-cvv" class="payment-input" placeholder="123" maxlength="3" autocomplete="cc-csc">
+                    <input type="text" id="card-cvv" class="payment-input" placeholder="123" maxlength="3" autocomplete="cc-csc" required>
                 </div>
                 <div class="payment-field">
                     <label class="payment-label" for="card-expiry">EXPIRY DATE</label>
-                    <input type="text" id="card-expiry" class="payment-input" placeholder="MM / YY" maxlength="7" autocomplete="cc-exp">
+                    <input type="text" id="card-expiry" class="payment-input" placeholder="MM / YY" maxlength="7" autocomplete="cc-exp" required>
                 </div>
             </div>
 
             <div class="payment-field">
                 <label class="payment-label" for="billing-address">BILLING ADDRESS</label>
-                <input type="text" id="billing-address" class="payment-input" placeholder="Street address" autocomplete="street-address">
+                <input type="text" id="billing-address" class="payment-input" placeholder="Street address" autocomplete="street-address" required>
             </div>
 
             <div class="payment-row">
                 <div class="payment-field">
                     <label class="payment-label" for="billing-state">STATE</label>
-                    <input type="text" id="billing-state" class="payment-input" placeholder="VIC" autocomplete="address-level1">
+                    <input type="text" id="billing-state" class="payment-input" placeholder="VIC" autocomplete="address-level1" required>
                 </div>
                 <div class="payment-field">
                     <label class="payment-label" for="billing-postcode">POSTCODE</label>
-                    <input type="text" id="billing-postcode" class="payment-input" placeholder="3000" maxlength="4" autocomplete="postal-code">
+                    <input type="text" id="billing-postcode" class="payment-input" placeholder="3000" maxlength="4" autocomplete="postal-code" required>
                 </div>
             </div>
 
-            <button type="button" class="payment-btn" id="make-payment-btn">MAKE PAYMENT – $0</button>
+            <button type="submit" class="payment-btn" id="make-payment-btn">MAKE PAYMENT – $0</button>
 
         </div>
     </form>
