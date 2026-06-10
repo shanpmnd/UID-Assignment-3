@@ -271,14 +271,14 @@
     font-weight: 600;
 }
 
-/* MOBILE PRICE RANGE — hidden on desktop */
+/* MOBILE PRICE RANGE - hidden on desktop */
 .product-price-range {
     display: none;
 }
 
 @media (max-width: 24.375rem) {
 
-    /* HEADER — show back arrow, hide hamburger/logo/nav */
+    /* HEADER - show back arrow, hide hamburger/logo/nav */
     .back-btn {
         display: block;
     }
