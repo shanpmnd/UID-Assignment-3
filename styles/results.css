@@ -1,7 +1,14 @@
+/* Remove extra padding since search bar handles the offset */
+body > main {
+    padding-top: 0;
+}
+
 /* SEARCH BAR */
 .search-bar {
     background-color: #f2d6d6;
     padding: 0.75rem 2.5rem;
+    margin-top: 4rem;
+    margin-bottom: 0;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -84,6 +91,7 @@
     .search-bar {
         padding: 0.75rem 1rem;
         gap: 0.75rem;
+        margin-top: 0;
     }
 
     /* Back arrow on the left */
